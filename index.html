@@ -10,13 +10,28 @@
   <link rel="preload" as="image" href="assets/images/hero-product.jpg" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="layout">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <header class="site-nav" id="site-nav" aria-label="页面导航"></header>
-  <div class="drawer" id="drawer" aria-hidden="true"></div>
+  <!-- 桌面固定侧边栏 / 移动端抽屉 -->
+  <aside class="sidebar" id="sidebar" aria-label="课程章节导航">
+    <div class="sidebar__inner"></div>
+  </aside>
 
-  <main id="main">
+  <!-- 移动端顶栏 -->
+  <header class="mobile-bar" id="mobile-bar">
+    <button class="mobile-bar__toggle" id="sidebar-toggle" type="button" aria-label="打开章节导航" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span>
+    </button>
+    <span class="mobile-bar__brand">C4D</span>
+    <span class="mobile-bar__title" id="section-title">课程概览</span>
+  </header>
+
+  <!-- 遮罩（移动端抽屉打开时） -->
+  <div class="sidebar__scrim" id="sidebar-scrim" hidden></div>
+
+  <!-- 内容区 -->
+  <main id="main" class="content">
     <noscript>
       <div class="wrap" style="padding-block:120px 40px">
         <h1>C4D三维产品设计与动画实训班</h1>
