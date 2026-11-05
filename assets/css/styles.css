@@ -1122,6 +1122,7 @@ main section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .feat--4 { grid-column: 1 / 5; }
 .feat--5 { grid-column: 5 / 9; }
 .feat--6 { grid-column: 9 / 13; }
+.feat--7 { grid-column: 4 / 10; margin-top: clamp(24px, 3vw, 48px); }
 
 .feature {
   padding-top: 20px;
@@ -2054,7 +2055,7 @@ main section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
     gap: clamp(26px, 3.2vw, 40px) clamp(16px, 2.4vw, 30px);
   }
   .feat--1, .feat--2, .feat--3,
-  .feat--4, .feat--5, .feat--6 {
+  .feat--4, .feat--5, .feat--6, .feat--7 {
     grid-column: auto;
     margin-top: 0;
   }

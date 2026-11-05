@@ -187,6 +187,7 @@
               '<div class="feat feat--4">' + featureCard(f.items[3]) + "</div>" +
               '<div class="feat feat--5">' + featureCard(f.items[4]) + "</div>" +
               '<div class="feat feat--6">' + featureCard(f.items[5]) + "</div>" +
+              '<div class="feat feat--7">' + featureCard(f.items[6]) + "</div>" +
             "</div>" +
           "</div>" +
         "</div>" +
