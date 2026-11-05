@@ -67,7 +67,6 @@ body.is-locked { overflow: hidden; }
    ========================================================================== */
 
 body.layout {
-  display: flex;
   min-height: 100vh;
   background: var(--paper);
 }
@@ -185,11 +184,13 @@ body.layout {
 /* ---------- 内容区 ---------- */
 
 .content {
-  flex: 1;
   margin-left: 280px;
+  width: calc(100% - 280px);
   min-height: 100vh;
   position: relative;
+  box-sizing: border-box;
 }
+
 
 .content > section { display: none; }
 .content > section.is-active { display: block; animation: sectionIn .38s var(--ease); }
@@ -291,7 +292,7 @@ body.layout {
   }
   .sidebar.is-open { transform: translateX(0); box-shadow: 0 0 40px rgba(0,0,0,.15); }
 
-  .content { margin-left: 0; padding-top: 56px; }
+  .content { margin-left: 0; padding-top: 56px; width: 100%; }
   .mobile-bar { display: flex; }
   .sidebar__scrim { display: block; }
 }
@@ -306,7 +307,6 @@ body.layout {
    ========================================================================== */
 
 body.layout {
-  display: flex;
   min-height: 100vh;
   background: var(--paper);
 }
@@ -430,11 +430,13 @@ body.layout {
 /* ---------- 内容区 ---------- */
 
 .content {
-  flex: 1;
   margin-left: 280px;
+  width: calc(100% - 280px);
   min-height: 100vh;
   position: relative;
+  box-sizing: border-box;
 }
+
 
 .content > section { display: none; }
 .content > section.is-active { display: block; animation: sectionIn .38s var(--ease); }
@@ -527,6 +529,8 @@ body.layout {
   to   { opacity: 1; }
 }
 
+
+
 /* ==========================================================================
    响应式：侧边栏 → 抽屉
    ========================================================================== */
@@ -538,7 +542,7 @@ body.layout {
   }
   .sidebar.is-open { transform: translateX(0); box-shadow: 0 0 40px rgba(0,0,0,.15); }
 
-  .content { margin-left: 0; padding-top: 56px; }
+  .content { margin-left: 0; padding-top: 56px; width: 100%; }
   .mobile-bar { display: flex; }
   .sidebar__scrim { display: block; }
 }
@@ -2209,4 +2213,64 @@ main section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
   }
   .reveal { opacity: 1; transform: none; }
   .hero__parallax img { transform: none !important; }
+}
+
+/* ==========================================================================
+   Hero 在左侧边栏布局下的重排
+   ========================================================================== */
+
+body.layout .hero {
+  padding-top: clamp(48px, 6vw, 72px) !important;
+  padding-bottom: clamp(44px, 6vw, 68px) !important;
+}
+
+body.layout .hero__title {
+  font-size: clamp(34px, 5vw, 68px) !important;
+  letter-spacing: -0.025em !important;
+}
+
+body.layout .hero__figure {
+  position: relative !important;
+  margin-top: clamp(28px, 4vw, 44px) !important;
+  height: clamp(260px, 34vw, 420px) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--line) !important;
+  background: var(--paper-3) !important;
+}
+
+body.layout .hero__stats {
+  position: static !important;
+  z-index: auto !important;
+  margin-top: clamp(22px, 3vw, 36px) !important;
+  margin-bottom: clamp(18px, 2.4vw, 28px) !important;
+  padding: clamp(22px, 2.6vw, 32px) clamp(14px, 2.2vw, 24px) !important;
+  background: var(--paper) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 24px 60px -46px rgba(27, 25, 21, 0.5) !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body.layout .hero__tag {
+  position: absolute !important;
+  top: clamp(14px, 2vw, 22px) !important;
+  left: clamp(14px, 2vw, 22px) !important;
+  padding: 5px 10px !important;
+  background: rgba(247, 244, 239, 0.88) !important;
+  font-size: 9.5px !important;
+  letter-spacing: 0.14em !important;
+  color: var(--ink-2) !important;
+  border-radius: 2px !important;
+}
+
+body.layout .hero__caption {
+  position: absolute !important;
+  bottom: clamp(12px, 1.8vw, 20px) !important;
+  left: clamp(14px, 2vw, 22px) !important;
+  padding: 6px 10px !important;
+  background: rgba(23, 21, 16, 0.62) !important;
+  color: rgba(247, 244, 239, 0.86) !important;
+  font-size: 9.5px !important;
+  letter-spacing: 0.1em !important;
+  border-radius: 2px !important;
 }
